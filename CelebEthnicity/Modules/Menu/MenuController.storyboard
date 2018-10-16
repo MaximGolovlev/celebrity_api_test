@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu Controller-->
+        <scene sceneID="Zd0-ua-qyi">
+            <objects>
+                <viewController storyboardIdentifier="MenuController" modalPresentationStyle="overFullScreen" id="VD0-37-35k" customClass="MenuController" customModule="CelebEthnicity" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="dV5-4y-Suy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Wzs-sk-FYR">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tOm-Ks-AyF">
+                                    <rect key="frame" x="87.5" y="178.5" width="200" height="310"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dQu-Mk-EVo">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="90"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jup-B2-62P">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" red="0.41960784313725491" green="0.15294117647058825" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="Fvm-0R-yhF"/>
+                                                        <constraint firstAttribute="height" constant="90" id="ZB8-Ue-95S"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(menu)"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="45"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpN-bu-8xf">
+                                                    <rect key="frame" x="110" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" red="0.8784313725490196" green="0.55686274509803924" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(menu)"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="45"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Aob-yi-PXT">
+                                            <rect key="frame" x="0.0" y="110" width="200" height="90"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52t-jC-asB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" red="0.97254901960784312" green="0.95686274509803915" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="Msf-fX-m5E"/>
+                                                        <constraint firstAttribute="height" constant="90" id="oif-ZB-4h0"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(menu)"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="45"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAt-vp-RGg">
+                                                    <rect key="frame" x="110" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" red="0.74117647058823533" green="0.96862745098039216" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(menu)"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="45"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sK0-yW-IGk">
+                                            <rect key="frame" x="0.0" y="220" width="200" height="90"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6b-HR-b01">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" red="0.6705882352941176" green="0.63921568627450975" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="4h2-l9-bdk"/>
+                                                        <constraint firstAttribute="width" constant="90" id="lC0-eo-yn9"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(menu)"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="45"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIi-Zz-3K7">
+                                                    <rect key="frame" x="110" y="0.0" width="90" height="90"/>
+                                                    <color key="backgroundColor" red="0.74509803921568629" green="0.71764705882352942" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="menu"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="45"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="tOm-Ks-AyF" firstAttribute="centerY" secondItem="Wzs-sk-FYR" secondAttribute="centerY" id="N4E-TM-E9P"/>
+                                <constraint firstItem="tOm-Ks-AyF" firstAttribute="centerX" secondItem="Wzs-sk-FYR" secondAttribute="centerX" id="vBh-4h-6mw"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Cd9-91-hcW" appends="YES" id="Nb1-BQ-poi"/>
+                            </connections>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1NU-Di-L8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Cd9-91-hcW">
+                    <connections>
+                        <action selector="viewTapHandler:" destination="VD0-37-35k" id="NFM-2R-feI"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1152.8" y="-227.13643178410797"/>
+        </scene>
+    </scenes>
+</document>
