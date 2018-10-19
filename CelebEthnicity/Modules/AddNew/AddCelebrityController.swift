@@ -56,9 +56,11 @@ class AddCelebrityController: UIViewController {
         super.viewDidAppear(animated)
         
        
-        collectUrls(page: 2) { [weak self] urls in
+        collectUrls(page: 1) { [weak self] urls in
             
-            urls.forEach({ collectdataForCeleb(url: $0, completion: { (celebrity) in
+            urls.forEach({
+                sleep(5)
+                collectdataForCeleb(url: $0, completion: { (celebrity) in
                 
                     self?.uploadToFirestore(celeb: celebrity)
                 
@@ -175,20 +177,26 @@ class AddCelebrityController: UIViewController {
     
     func appendImage(celeb: Celebrity, completion: @escaping (Celebrity?, Error?)->()) {
         parceManager.changeHtml(originalHTML)
-        imgHTML = parceManager.parse(cssQuery: "p img[src$=.jpg]")?.first?.html
+        imgHTML = parceManager.parse(cssQuery: "img[src$=.jpg]")?.first?.html
         
-        let html = imgHTML!.html2AttributedString!
-        print("")
+        if let html = imgHTML {
         
-        
-        html.enumerateAttribute(.link, in: NSRange(location: 0, length: html.length), options: [.longestEffectiveRangeNotRequired], using: { (link, _, _) in
+            let types: NSTextCheckingResult.CheckingType = .link
+            let detector = try? NSDataDetector(types: types.rawValue)
             
-            celeb.picture = (link as! URL).absoluteString
+            guard let detect = detector else {
+                return
+            }
+            
+            let matches = detect.matches(in: html, options: .reportCompletion, range: NSMakeRange(0, html.count))
+            
+            celeb.picture = matches.first?.url?.absoluteString
             completion(celeb, nil)
-        })
+        } else {
+            completion(celeb, nil)
+        }
         
-        
-        
+
 //        let string = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=pageimages&exintro&explaintext&redirects=1&titles=\(celeb.name!)&pithumbsize=500".addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
 //
 //        let task = URLSession.shared.dataTask(with: URL(string: string!)!) { (data, response, error) in
