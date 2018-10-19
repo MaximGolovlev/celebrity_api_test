@@ -8,6 +8,9 @@ target 'CelebEthnicity' do
   	pod 'Moya/RxSwift',     '~> 11.0'
 	pod 'Moya-ObjectMapper'
 	pod 'CollectionKit'
-    pod 'Hero',             '~> 1.4.0'
-    pod 'ViewAnimator'
+    	pod 'Hero',             '~> 1.4.0'
+    	pod 'ViewAnimator'
+	pod 'SwiftSoup'
+	pod 'Firebase/Core'
+	pod 'Firebase/Firestore'
 end

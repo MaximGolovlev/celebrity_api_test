@@ -204,9 +204,8 @@ class FeedController: UIViewController {
         menu.dismissed = { [weak self] in
             self?.renderViews()
         }
-        DispatchQueue.main.async{
-            self.present(menu, animated: true, completion: nil)
-        }
+        
+        show(menu, sender: self)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

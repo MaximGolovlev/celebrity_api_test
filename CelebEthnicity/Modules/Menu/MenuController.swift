@@ -17,4 +17,21 @@ class MenuController: UIViewController {
     @IBAction func viewTapHandler(_ sender: Any) {
         hero.dismissViewController(completion: dismissed)
     }
+    
+    @IBAction func addHandler(_ sender: UIButton) {
+        let vc = AddCelebrityController()
+        vc.hero.isEnabled = true
+        sender.hero.id = "selected"
+        vc.contentView.backgroundColor = sender.backgroundColor
+        vc.contentView.hero.modifiers = [.source(heroID: "selected")]
+        
+        show(vc, sender: self)
+    }
+    
+//    override var next: UIResponder? {
+//        get {
+//            return nil
+//        }
+//    }
+    
 }

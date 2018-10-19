@@ -16,17 +16,28 @@ class Celebrity: Mappable {
     var birthName: String?
     var birthPlace: String?
     var dateOfBith: String?
+    var deathPlace: String?
+    var dateOfDeath: String?
     var ethnicity: [Ethnicity]?
     var description: String?
     var sources: [String]?
-    var similar: [Celebrity]?
+    var similar: [String]?
     var tags: [String]?
     var comments: [Comment]?
     var lastUpdate: Date?
     
-    init(name: String?, picture: String?) {
+    init(name: String?, picture: String? = nil, birthName: String? = nil, birthPlace: String? = nil, dateOfBith: String? = nil, ethnicity: [Ethnicity]? = nil, tags: [String]? = nil, similar: [String]? = nil, description: String? = nil, deathPlace: String? = nil, dateOfDeath: String? = nil) {
         self.name = name
         self.picture = picture
+        self.birthName = birthName
+        self.birthPlace = birthPlace
+        self.dateOfBith = dateOfBith
+        self.ethnicity = ethnicity
+        self.tags = tags
+        self.similar = similar
+        self.description = description
+        self.deathPlace = deathPlace
+        self.dateOfDeath = dateOfDeath
     }
     
     required init?(map: Map) {
@@ -53,6 +64,11 @@ class Ethnicity: Mappable {
     
     var name: String?
     var percent: String?
+    
+    init(name: String?, percent: String?) {
+        self.name = name
+        self.percent = percent
+    }
     
     required init?(map: Map) {}
     

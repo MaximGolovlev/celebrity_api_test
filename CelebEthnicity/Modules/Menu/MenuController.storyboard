@@ -32,13 +32,16 @@
                                                         <constraint firstAttribute="width" constant="90" id="Fvm-0R-yhF"/>
                                                         <constraint firstAttribute="height" constant="90" id="ZB8-Ue-95S"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Add"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="source(menu)"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <integer key="value" value="45"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="addHandler:" destination="VD0-37-35k" eventType="touchUpInside" id="EKm-4C-mG6"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpN-bu-8xf">
                                                     <rect key="frame" x="110" y="0.0" width="90" height="90"/>

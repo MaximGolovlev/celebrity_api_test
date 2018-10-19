@@ -13,6 +13,7 @@ enum ViewControllerKey: String {
     case menu = "MenuController"
     case feed = "FeedController"
     case celebrity = "CelebrityController"
+    case addCelebrity = "AddCelebrityController"
 }
 
 protocol StoryboardManagerable {
@@ -27,6 +28,7 @@ enum StoryboardManager {
     case Feed
     case Menu
     case Celebrity
+    case AddCelebrity
 }
 
 extension StoryboardManager: StoryboardManagerable {
@@ -39,6 +41,8 @@ extension StoryboardManager: StoryboardManagerable {
             return "MenuController"
         case .Celebrity:
             return "CelebrityController"
+        case .AddCelebrity:
+            return "AddCelebrityController"
         }
     }
     
@@ -50,6 +54,8 @@ extension StoryboardManager: StoryboardManagerable {
             return "MenuController"
         case .Celebrity:
             return "CelebrityController"
+        case .AddCelebrity:
+            return "AddCelebrityController"
         }
     }
     

@@ -2,4 +2,166 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+            timestampString = "561652406.507426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "appendDescription(celeb:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+            timestampString = "561652406.5078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "appendDescription(celeb:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+            timestampString = "561652406.5080661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "collectdataForCeleb(celebName:url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+            timestampString = "561652406.508333"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "appendImage(celeb:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+            timestampString = "561652406.508589"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "appendDescription(celeb:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CelebEthnicity.AddCelebrityController.appendDescription(celeb: CelebEthnicity.Celebrity, completion: (Swift.Optional&lt;CelebEthnicity.Celebrity&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CelebEthnicity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/CelebEthnicity/CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+                  timestampString = "561652406.578819"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "673">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CelebEthnicity.AddCelebrityController.appendDescription(celeb: CelebEthnicity.Celebrity, completion: (Swift.Optional&lt;CelebEthnicity.Celebrity&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CelebEthnicity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/CelebEthnicity/CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+                  timestampString = "561652406.581645"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "110">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+            timestampString = "561652406.508844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "collectdataForCeleb(celebName:url:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CelebEthnicity.AddCelebrityController.collectdataForCeleb(celebName: Swift.Optional&lt;Swift.String&gt;, url: Swift.Optional&lt;Foundation.URL&gt;, completion: (CelebEthnicity.Celebrity) -&gt; ()) -&gt; ()"
+                  moduleName = "CelebEthnicity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/CelebEthnicity/CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+                  timestampString = "561652406.589203"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "15094">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #10 (Swift.Optional&lt;CelebEthnicity.Celebrity&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CelebEthnicity.AddCelebrityController.collectdataForCeleb(celebName: Swift.Optional&lt;Swift.String&gt;, url: Swift.Optional&lt;Foundation.URL&gt;, completion: (CelebEthnicity.Celebrity) -&gt; ()) -&gt; ()"
+                  moduleName = "CelebEthnicity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/CelebEthnicity/CelebEthnicity/Modules/AddNew/AddCelebrityController.swift"
+                  timestampString = "561652406.591484"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

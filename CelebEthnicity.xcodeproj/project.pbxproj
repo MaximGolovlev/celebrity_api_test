@@ -22,6 +22,11 @@
 		CE444DE22176229A0001EE43 /* CelebrityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE444DE12176229A0001EE43 /* CelebrityController.swift */; };
 		CE444DE4217622C80001EE43 /* CelebrityController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE444DE3217622C80001EE43 /* CelebrityController.storyboard */; };
 		CE444DE721762D250001EE43 /* ResizableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE444DE621762D250001EE43 /* ResizableTextView.swift */; };
+		CE56BFD72178926E00086A0E /* HTMLParcingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56BFD62178926E00086A0E /* HTMLParcingManager.swift */; };
+		CE56BFD92178934D00086A0E /* UIAlertView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56BFD82178934D00086A0E /* UIAlertView+Helpers.swift */; };
+		CE56BFDC2178984500086A0E /* AddCelebrityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56BFDA2178984500086A0E /* AddCelebrityController.swift */; };
+		CE56BFE12178D70A00086A0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE56BFE02178D70A00086A0E /* GoogleService-Info.plist */; };
+		CEC00BFF2179DC3A008EDFC8 /* String+Helpres.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */; };
 		E336FE0649FAB4DD654E0DDD /* Pods_CelebEthnicity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAD1315D4204C16A2607C2E /* Pods_CelebEthnicity.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,11 @@
 		CE444DE12176229A0001EE43 /* CelebrityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityController.swift; sourceTree = "<group>"; };
 		CE444DE3217622C80001EE43 /* CelebrityController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CelebrityController.storyboard; sourceTree = "<group>"; };
 		CE444DE621762D250001EE43 /* ResizableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableTextView.swift; sourceTree = "<group>"; };
+		CE56BFD62178926E00086A0E /* HTMLParcingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParcingManager.swift; sourceTree = "<group>"; };
+		CE56BFD82178934D00086A0E /* UIAlertView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Helpers.swift"; sourceTree = "<group>"; };
+		CE56BFDA2178984500086A0E /* AddCelebrityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCelebrityController.swift; sourceTree = "<group>"; };
+		CE56BFE02178D70A00086A0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpres.swift"; sourceTree = "<group>"; };
 		D840D369CFB3DC36EC10FC68 /* Pods-CelebEthnicity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebEthnicity.release.xcconfig"; path = "Pods/Target Support Files/Pods-CelebEthnicity/Pods-CelebEthnicity.release.xcconfig"; sourceTree = "<group>"; };
 		F8C50760543C831FC4D44DC5 /* Pods-CelebEthnicity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebEthnicity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CelebEthnicity/Pods-CelebEthnicity.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAD1315D4204C16A2607C2E /* Pods_CelebEthnicity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CelebEthnicity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +114,7 @@
 				CE2B390C2170F5E50012843A /* DataSource */,
 				CE2B38FB2170D1040012843A /* Assets.xcassets */,
 				CE2B39002170D1040012843A /* Info.plist */,
+				CE56BFE02178D70A00086A0E /* GoogleService-Info.plist */,
 				CE2B38FD2170D1040012843A /* LaunchScreen.storyboard */,
 				CE2B39082170E1490012843A /* Managers */,
 				CE2B39092170E2270012843A /* Models */,
@@ -116,6 +127,7 @@
 			children = (
 				CE2B39062170E1440012843A /* NetworkManager.swift */,
 				CE444DDE2175F57E0001EE43 /* StoryboardManager.swift */,
+				CE56BFD62178926E00086A0E /* HTMLParcingManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -140,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				CE2B39122170F8360012843A /* UIView+Constraints.swift */,
+				CE56BFD82178934D00086A0E /* UIAlertView+Helpers.swift */,
+				CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -147,6 +161,7 @@
 		CE444DD72175EFCD0001EE43 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE56BFD42178915F00086A0E /* AddNew */,
 				CE444DE521762D110001EE43 /* Views */,
 				CE444DE0217622790001EE43 /* Celebrity */,
 				CE444DD82175F0B50001EE43 /* Feed */,
@@ -188,6 +203,14 @@
 				CE444DE621762D250001EE43 /* ResizableTextView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE56BFD42178915F00086A0E /* AddNew */ = {
+			isa = PBXGroup;
+			children = (
+				CE56BFDA2178984500086A0E /* AddCelebrityController.swift */,
+			);
+			path = AddNew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +279,7 @@
 				CE444DDD2175F1120001EE43 /* MenuController.storyboard in Resources */,
 				CE2B38FC2170D1040012843A /* Assets.xcassets in Resources */,
 				CE2B38FA2170D1030012843A /* FeedController.storyboard in Resources */,
+				CE56BFE12178D70A00086A0E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,26 +309,48 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CelebEthnicity/Pods-CelebEthnicity-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -336,16 +382,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE56BFD72178926E00086A0E /* HTMLParcingManager.swift in Sources */,
 				CE2B39072170E1440012843A /* NetworkManager.swift in Sources */,
 				CE444DDB2175F0D70001EE43 /* MenuController.swift in Sources */,
 				CE2B390B2170E23E0012843A /* Celebrity.swift in Sources */,
 				CE2B38F72170D1030012843A /* FeedController.swift in Sources */,
 				CE2B39132170F8360012843A /* UIView+Constraints.swift in Sources */,
 				CE2B390E2170F5F70012843A /* DataSource.swift in Sources */,
+				CE56BFDC2178984500086A0E /* AddCelebrityController.swift in Sources */,
 				CE444DE22176229A0001EE43 /* CelebrityController.swift in Sources */,
 				CE444DDF2175F57E0001EE43 /* StoryboardManager.swift in Sources */,
+				CEC00BFF2179DC3A008EDFC8 /* String+Helpres.swift in Sources */,
 				CE2B38F52170D1030012843A /* AppDelegate.swift in Sources */,
 				CE444DE721762D250001EE43 /* ResizableTextView.swift in Sources */,
+				CE56BFD92178934D00086A0E /* UIAlertView+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
