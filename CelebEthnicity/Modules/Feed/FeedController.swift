@@ -15,7 +15,7 @@ enum FeedViewStackItem: Int {
     case combined = 2
 }
 
-class FeedController: UIViewController {
+class FeedController: UIViewController, BaseView {
     
     let superStackView: UIStackView = {
         let sv = UIStackView()
@@ -54,16 +54,34 @@ class FeedController: UIViewController {
         return sv
     }()
     
-    var images: [UIImage]!
     var imageViews = [UIImageView]()
     @IBOutlet weak var menuButton: UIButton!
     
+    var imageSource = [String]()
+    var dataSource = [Celebrity]()
+    var firbaseManager = FirbaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        renderViews()
-        
+       // fetchCelebs()
+    }
+    
+    func fetchCelebs() {
+        firbaseManager.fetchCelebrities(limit: 7, orderedBy: nil) { [weak self] (celebs, error) in
+            
+            guard error == nil else {
+                self?.showAlert(title: "Error", message: error?.localizedDescription)
+                return
+            }
+            
+            if let celebs = celebs {
+                self?.imageSource = celebs.compactMap({ $0.picture })
+                self?.dataSource = celebs
+                
+                self?.renderViews()
+            }
+        }
     }
     
     func renderViews() {
@@ -107,8 +125,7 @@ class FeedController: UIViewController {
     }
     
     func configureViews() {
-        self.images = DataSource.testImages.shuffled()
-        
+
         view.insertSubview(superStackView, at: 0)
         superStackView.fillSafeArea()
         
@@ -138,11 +155,11 @@ class FeedController: UIViewController {
     
     func configureLongStackView() -> UIStackView {
         
-        let firstImageView  = imageView(self.images.removeFirst())
-        let secondImageView = imageView(self.images.removeFirst())
-        let thirdImageView  = imageView(self.images.removeFirst())
+        let firstImageView  = imageView(self.imageSource.removeFirst())
+        let secondImageView = imageView(self.imageSource.removeFirst())
+        let thirdImageView  = imageView(self.imageSource.removeFirst())
         
-        [firstImageView, secondImageView, thirdImageView].shuffled().forEach { (iv) in
+        [firstImageView, secondImageView, thirdImageView].forEach { (iv) in
             longStackView.addArrangedSubview(iv)
         }
         
@@ -159,8 +176,8 @@ class FeedController: UIViewController {
     func configureCombinedStackView() -> UIStackView {
         
         let short = configurateShortStackView()
-        let firstImageView  = imageView(self.images.removeFirst())
-        let secondImageView = imageView(self.images.removeFirst())
+        let firstImageView  = imageView(self.imageSource.removeFirst())
+        let secondImageView = imageView(self.imageSource.removeFirst())
         
         [short, firstImageView, secondImageView].shuffled().forEach { (view) in
             combinedStackView.addArrangedSubview(view)
@@ -179,8 +196,8 @@ class FeedController: UIViewController {
     
     func configurateShortStackView() -> UIStackView {
         
-        let firstImageView  = imageView(self.images.removeFirst())
-        let secondImageView = imageView(self.images.removeFirst())
+        let firstImageView  = imageView(self.imageSource.removeFirst())
+        let secondImageView = imageView(self.imageSource.removeFirst())
         
         [firstImageView, secondImageView].shuffled().forEach { (iv) in
             shortStackView.addArrangedSubview(iv)
@@ -189,8 +206,9 @@ class FeedController: UIViewController {
         return shortStackView
     }
     
-    func imageView(_ image: UIImage) -> UIImageView {
-        let imv = UIImageView(image: image)
+    func imageView(_ imageURL: String) -> UIImageView {
+        let imv = UIImageView()
+        imv.loadImage(imageURL, placeHolder: #imageLiteral(resourceName: "image_placeholder"), completion: nil)
         imv.contentMode = .scaleAspectFill
         imv.clipsToBounds = true
         imageViews.append(imv)
@@ -202,7 +220,7 @@ class FeedController: UIViewController {
         
         let menu = StoryboardManager.Menu.instantiateDefaultVC() as! MenuController
         menu.dismissed = { [weak self] in
-            self?.renderViews()
+            self?.fetchCelebs()
         }
         
         show(menu, sender: self)
@@ -211,16 +229,17 @@ class FeedController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        imageViews.forEach { (imv) in
+        imageViews.enumerated().forEach { (index, imv) in
             
             if let location = touches.first?.location(in: view)  {
                 
                 guard imv.superview?.convert(imv.frame, to: view).contains(location) == true else { return }
 
-                let celeb = StoryboardManager.Celebrity.instantiateDefaultVC() as! CelebrityController
-                celeb.imageView = imv
+                let celebVC = StoryboardManager.Celebrity.instantiateDefaultVC() as! CelebrityController
+                celebVC.imageViewHeroId = imv.hero.id
+                celebVC.celebrity = dataSource[index]
                 menuButton.hero.modifiers = [.fade, .translate(CGPoint(x: 150, y: 0))]
-                present(celeb, animated: true, completion: nil)
+                present(celebVC, animated: true, completion: nil)
                 
             }
         }

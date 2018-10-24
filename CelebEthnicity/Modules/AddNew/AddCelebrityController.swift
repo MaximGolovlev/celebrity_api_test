@@ -37,6 +37,8 @@ class AddCelebrityController: UIViewController {
     
     lazy var parceManager = HTMLParcingManager(rootViewController: self)
     
+    var heights = [Height]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,23 +57,69 @@ class AddCelebrityController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-       
-        collectUrls(page: 1) { [weak self] urls in
+        
+//        let startChar = Unicode.Scalar("A").value
+//        let endChar = Unicode.Scalar("Z").value
+//
+//        for alphabet in startChar...endChar {
+//
+//            if let char = Unicode.Scalar(alphabet)?.description {
+//                collectHeights(letter: char) { (heights) in
+//                    heights.forEach({ self.uploadToFirestore(heigh: $0) })
+//                }
+//            }
+//        }
+        
+        
+        fetchHeighs { [weak self] (array) in
+
+            self?.heights = array ?? []
             
-            urls.forEach({
-                sleep(5)
-                collectdataForCeleb(url: $0, completion: { (celebrity) in
-                
-                    self?.uploadToFirestore(celeb: celebrity)
-                
-                })
-            })
+            for i in 1...77 {
+                self?.collectUrls(page: i) { [weak self] urls in
+                    
+                    urls.forEach({
+                        sleep(2)
+                        self?.collectdataForCeleb(url: $0, completion: { (celebrity) in
+                            
+                            self?.uploadToFirestore(celeb: celebrity)
+                            
+                        })
+                    })
+                }
+            }
         }
     }
     
     @objc func dismissHandler() {
         dismiss(animated: true, completion: nil)
     }
+    
+    func collectHeights(letter: String, completion: ([Height])->()) {
+        
+        var components = URLComponents()
+        components.scheme = "http"
+        components.host = "celebheights.com"
+        components.path = "/s/all\(letter).html"
+        
+        parceManager.downloadHTML(urlString: components.string)
+        var titles = parceManager.parse(cssQuery: ".sAZ2 a")!.compactMap({ $0.text }).filter({ $0 != "" })
+        var heights = parceManager.parse(cssQuery: ".sAZ2")!.compactMap({ $0.text }).filter({ $0 != "" })
+        
+        heights.enumerated().forEach({ (string) in
+            
+            heights[string.offset] = string.element.replacingOccurrences(of: titles[string.offset], with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+        })
+    
+        print("a")
+        
+        let cmValues = heights.map({ $0.slice(from: "(", to: ")")?.replacingOccurrences(of: "cm", with: "") }).map({ $0 ?? "0" }).map({ Int($0) })
+    
+        let heightsClass = heights.enumerated().compactMap({ Height(name: titles[$0.offset], height: $0.element, value: cmValues[$0.offset]) })
+        
+        completion(heightsClass)
+    }
+    
     
     func collectUrls(page: Int, completion: ([URL])->()) {
         
@@ -118,6 +166,8 @@ class AddCelebrityController: UIViewController {
         
         let items = parceManager.parse(cssQuery: "p")
         
+        let categories = (parceManager.parse(cssQuery: ".clean-grid-entry-meta-single-cats")?.first?.text ?? "").replacingOccurrences(of: "Posted in", with: "").trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: ", ").flatMap({ $0.components(separatedBy: " ").dropFirst() })
+        
         let name = parceManager.parse(cssQuery: ".entry-title")?.first?.text ?? ""
         let birthName = items?.first(where: { $0.text.contains(CelebtiryTags.birthName.rawValue) })?.text.replacingOccurrences(of: CelebtiryTags.birthName.rawValue, with: "").trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let birthPlace = items?.first(where: { $0.text.contains(CelebtiryTags.birthPlace.rawValue) })?.text.replacingOccurrences(of: CelebtiryTags.birthPlace.rawValue, with: "").trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -131,7 +181,7 @@ class AddCelebrityController: UIViewController {
         parceManager.changeHtml(similarHTML)
         let similar = parceManager.parse(cssQuery: "a[href]")?.compactMap({ $0.text }) ?? []
         
-        let celeb = Celebrity(name: name, picture: nil, birthName: birthName, birthPlace: birthPlace, dateOfBith: dateOfBirth, ethnicity: ethnicity, tags: tags, similar: similar, deathPlace: deathPlace, dateOfDeath: dateOfDeath)
+        let celeb = Celebrity(name: name, picture: nil, birthName: birthName, birthPlace: birthPlace, dateOfBith: dateOfBirth, ethnicity: ethnicity, tags: tags, similar: similar, deathPlace: deathPlace, dateOfDeath: dateOfDeath, categories: categories)
         
         appendDescription(celeb: celeb) { (celeb, _) in
             
@@ -139,10 +189,53 @@ class AddCelebrityController: UIViewController {
                 self.appendImage(celeb: celeb, completion: { (celeb, _) in
                     
                     if let celeb = celeb {
-                        completion(celeb)
+                        self.appendHeight(celeb: celeb, completion: { (celeb, _) in
+                            
+                            if let celeb = celeb {
+                                completion(celeb)
+                            }
+                        })
                     }
-                    
                 })
+            }
+        }
+    }
+    
+    func appendHeight(celeb: Celebrity, completion: @escaping (Celebrity?, Error?)->()) {
+        
+        let height = self.heights.first(where: { $0.name == celeb.name })
+        celeb.height = height
+        completion(celeb, nil)
+        
+        
+//        let db = Firestore.firestore()
+//        let settings = db.settings
+//        settings.areTimestampsInSnapshotsEnabled = true
+//        db.settings = settings
+//
+//        let docRef = db.collection("heights").document(celeb.name!)
+//
+//        docRef.getDocument { (document, error) in
+//            if let json = document?.data() {
+//                let height = Height(JSON: json)
+//                celeb.height = height
+//                completion(celeb, nil)
+//            } else {
+//                completion(nil, nil)
+//            }
+//        }
+    }
+    
+    func fetchHeighs(completion: @escaping ([Height]?) -> ()) {
+        let db = Firestore.firestore()
+        
+        db.collection("heights").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion(nil)
+            } else {
+                let heights = querySnapshot?.documents.compactMap({ Height(JSON: $0.data()) })
+                completion(heights)
             }
         }
     }
@@ -226,37 +319,55 @@ class AddCelebrityController: UIViewController {
 //        task.resume()
     }
     
+    func uploadToFirestore(heigh: Height) {
+        let db = Firestore.firestore()
+
+        let data = [
+            "name": heigh.name ?? "",
+            "height": heigh.height ?? "",
+            "value": heigh.value ?? 0
+            ] as [String : Any]
+
+        db.collection("heights").document(heigh.name!).setData(data) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    
     func uploadToFirestore(celeb: Celebrity) {
         let db = Firestore.firestore()
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
         
         let ethnisityNames = celeb.ethnicity?.compactMap({ $0.name })
         
-        let timestamp = /*FieldValue.serverTimestamp()*/ Date().timeIntervalSince1970
+        let timestamp = FieldValue.serverTimestamp()
         
         let dict1 = [
-        
             "name": celeb.name ?? "",
             "picture": celeb.picture ?? "",
             "birthName": celeb.birthName ?? "",
-            "birthPlace": celeb.birthPlace ?? "",
             "dateOfBirth": celeb.dateOfBith ?? "",
+            "birthPlace": celeb.birthPlace ?? "",
+            "dateOfDeath": celeb.dateOfDeath ?? "",
+            "deathPlace": celeb.deathPlace ?? "",
             "ethnicity": ethnisityNames ?? []
         
             ] as [String : Any]
         
-        let dict2 = [
-            
+        let dict2 = ["height": ["name": "", "height": celeb.height?.height ?? "", "value": celeb.height?.value ?? 0]]
+        
+        let dict3 = [
+            "description": celeb.description ?? "",
             "tags": celeb.tags ?? [],
             "similar": celeb.similar ?? [],
-            "description": celeb.description ?? "",
+            "categories": celeb.categories ?? [],
             "lastUpdate": timestamp
             
             ] as [String : Any]
         
-        let data = dict1.merging(dict2) { $1 }
+        let data = dict1.merging(dict2, uniquingKeysWith:{ $1 }).merging(dict3, uniquingKeysWith:{ $1 })
         
         db.collection("celebrities").document(celeb.name!).setData(data) { err in
             if let err = err {

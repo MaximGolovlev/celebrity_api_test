@@ -18,7 +18,7 @@ class HTMLParcingManager {
     init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
     }
-    
+    @discardableResult
     func downloadHTML(urlString: String?) -> String? {
         // url string to URL
         guard let url = URL(string: urlString ?? "") else {

@@ -13,4 +13,5 @@ target 'CelebEthnicity' do
 	pod 'SwiftSoup'
 	pod 'Firebase/Core'
 	pod 'Firebase/Firestore'
+    pod 'MBProgressHUD'
 end

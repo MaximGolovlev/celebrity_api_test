@@ -69,4 +69,13 @@ extension UIView {
         return anchors
     }
     
+    func centerInSuperview() {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        self.centerXAnchor.constraint(equalTo: self.superview!.centerXAnchor).isActive = true
+        self.centerYAnchor.constraint(equalTo: self.superview!.centerYAnchor).isActive = true
+        
+    }
+    
 }

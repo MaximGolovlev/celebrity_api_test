@@ -27,6 +27,13 @@
 		CE56BFDC2178984500086A0E /* AddCelebrityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56BFDA2178984500086A0E /* AddCelebrityController.swift */; };
 		CE56BFE12178D70A00086A0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE56BFE02178D70A00086A0E /* GoogleService-Info.plist */; };
 		CEC00BFF2179DC3A008EDFC8 /* String+Helpres.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */; };
+		CEDFFC0F217E096900D6CF99 /* FirbaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC0E217E096900D6CF99 /* FirbaseManager.swift */; };
+		CEDFFC11217E0DD800D6CF99 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC10217E0DD800D6CF99 /* ErrorManager.swift */; };
+		CEDFFC16217E160300D6CF99 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC13217E160300D6CF99 /* Alertable.swift */; };
+		CEDFFC17217E160300D6CF99 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC14217E160300D6CF99 /* Loadable.swift */; };
+		CEDFFC18217E160300D6CF99 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC15217E160300D6CF99 /* BaseView.swift */; };
+		CEDFFC1B217E185900D6CF99 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC1A217E185900D6CF99 /* UIImageView+Helpers.swift */; };
+		CEDFFC1D217E24DA00D6CF99 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC1C217E24DA00D6CF99 /* Date+Helpers.swift */; };
 		E336FE0649FAB4DD654E0DDD /* Pods_CelebEthnicity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAD1315D4204C16A2607C2E /* Pods_CelebEthnicity.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +60,13 @@
 		CE56BFDA2178984500086A0E /* AddCelebrityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCelebrityController.swift; sourceTree = "<group>"; };
 		CE56BFE02178D70A00086A0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpres.swift"; sourceTree = "<group>"; };
+		CEDFFC0E217E096900D6CF99 /* FirbaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirbaseManager.swift; sourceTree = "<group>"; };
+		CEDFFC10217E0DD800D6CF99 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		CEDFFC13217E160300D6CF99 /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		CEDFFC14217E160300D6CF99 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		CEDFFC15217E160300D6CF99 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CEDFFC1A217E185900D6CF99 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
+		CEDFFC1C217E24DA00D6CF99 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		D840D369CFB3DC36EC10FC68 /* Pods-CelebEthnicity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebEthnicity.release.xcconfig"; path = "Pods/Target Support Files/Pods-CelebEthnicity/Pods-CelebEthnicity.release.xcconfig"; sourceTree = "<group>"; };
 		F8C50760543C831FC4D44DC5 /* Pods-CelebEthnicity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CelebEthnicity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CelebEthnicity/Pods-CelebEthnicity.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAD1315D4204C16A2607C2E /* Pods_CelebEthnicity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CelebEthnicity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +142,8 @@
 				CE2B39062170E1440012843A /* NetworkManager.swift */,
 				CE444DDE2175F57E0001EE43 /* StoryboardManager.swift */,
 				CE56BFD62178926E00086A0E /* HTMLParcingManager.swift */,
+				CEDFFC0E217E096900D6CF99 /* FirbaseManager.swift */,
+				CEDFFC10217E0DD800D6CF99 /* ErrorManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -151,9 +167,12 @@
 		CE2B39112170F81E0012843A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CEDFFC12217E160300D6CF99 /* Protocols */,
 				CE2B39122170F8360012843A /* UIView+Constraints.swift */,
 				CE56BFD82178934D00086A0E /* UIAlertView+Helpers.swift */,
 				CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */,
+				CEDFFC1A217E185900D6CF99 /* UIImageView+Helpers.swift */,
+				CEDFFC1C217E24DA00D6CF99 /* Date+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -211,6 +230,16 @@
 				CE56BFDA2178984500086A0E /* AddCelebrityController.swift */,
 			);
 			path = AddNew;
+			sourceTree = "<group>";
+		};
+		CEDFFC12217E160300D6CF99 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEDFFC13217E160300D6CF99 /* Alertable.swift */,
+				CEDFFC14217E160300D6CF99 /* Loadable.swift */,
+				CEDFFC15217E160300D6CF99 /* BaseView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +342,7 @@
 				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -336,6 +366,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -384,6 +415,8 @@
 			files = (
 				CE56BFD72178926E00086A0E /* HTMLParcingManager.swift in Sources */,
 				CE2B39072170E1440012843A /* NetworkManager.swift in Sources */,
+				CEDFFC1B217E185900D6CF99 /* UIImageView+Helpers.swift in Sources */,
+				CEDFFC11217E0DD800D6CF99 /* ErrorManager.swift in Sources */,
 				CE444DDB2175F0D70001EE43 /* MenuController.swift in Sources */,
 				CE2B390B2170E23E0012843A /* Celebrity.swift in Sources */,
 				CE2B38F72170D1030012843A /* FeedController.swift in Sources */,
@@ -391,9 +424,14 @@
 				CE2B390E2170F5F70012843A /* DataSource.swift in Sources */,
 				CE56BFDC2178984500086A0E /* AddCelebrityController.swift in Sources */,
 				CE444DE22176229A0001EE43 /* CelebrityController.swift in Sources */,
+				CEDFFC0F217E096900D6CF99 /* FirbaseManager.swift in Sources */,
+				CEDFFC17217E160300D6CF99 /* Loadable.swift in Sources */,
 				CE444DDF2175F57E0001EE43 /* StoryboardManager.swift in Sources */,
+				CEDFFC16217E160300D6CF99 /* Alertable.swift in Sources */,
 				CEC00BFF2179DC3A008EDFC8 /* String+Helpres.swift in Sources */,
+				CEDFFC1D217E24DA00D6CF99 /* Date+Helpers.swift in Sources */,
 				CE2B38F52170D1030012843A /* AppDelegate.swift in Sources */,
+				CEDFFC18217E160300D6CF99 /* BaseView.swift in Sources */,
 				CE444DE721762D250001EE43 /* ResizableTextView.swift in Sources */,
 				CE56BFD92178934D00086A0E /* UIAlertView+Helpers.swift in Sources */,
 			);
