@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE23F6D12181ECF800C4DA42 /* heights.json in Resources */ = {isa = PBXBuildFile; fileRef = CE23F6D02181ECF800C4DA42 /* heights.json */; };
 		CE2B38F52170D1030012843A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B38F42170D1030012843A /* AppDelegate.swift */; };
 		CE2B38F72170D1030012843A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B38F62170D1030012843A /* FeedController.swift */; };
 		CE2B38FA2170D1030012843A /* FeedController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2B38F82170D1030012843A /* FeedController.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE23F6D02181ECF800C4DA42 /* heights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heights.json; sourceTree = "<group>"; };
 		CE2B38F12170D1030012843A /* CelebEthnicity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CelebEthnicity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2B38F42170D1030012843A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE2B38F62170D1030012843A /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE23F6CF2181ECEA00C4DA42 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE23F6D02181ECF800C4DA42 /* heights.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		CE2B38E82170D1030012843A = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		CE2B38F32170D1030012843A /* CelebEthnicity */ = {
 			isa = PBXGroup;
 			children = (
+				CE23F6CF2181ECEA00C4DA42 /* Data */,
 				CE2B38F42170D1030012843A /* AppDelegate.swift */,
 				CE444DD72175EFCD0001EE43 /* Modules */,
 				CE2B39112170F81E0012843A /* Helpers */,
@@ -303,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE23F6D12181ECF800C4DA42 /* heights.json in Resources */,
 				CE2B38FF2170D1040012843A /* LaunchScreen.storyboard in Resources */,
 				CE444DE4217622C80001EE43 /* CelebrityController.storyboard in Resources */,
 				CE444DDD2175F1120001EE43 /* MenuController.storyboard in Resources */,

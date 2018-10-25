@@ -75,7 +75,7 @@ class AddCelebrityController: UIViewController {
 
             self?.heights = array ?? []
             
-            for i in 1...77 {
+            for i in 36...77 {
                 self?.collectUrls(page: i) { [weak self] urls in
                     
                     urls.forEach({
@@ -227,17 +227,35 @@ class AddCelebrityController: UIViewController {
     }
     
     func fetchHeighs(completion: @escaping ([Height]?) -> ()) {
-        let db = Firestore.firestore()
+//        let db = Firestore.firestore()
+//
+//        db.collection("heights").getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//                completion(nil)
+//            } else {
+//                let heights = querySnapshot?.documents.compactMap({ Height(JSON: $0.data()) })
+//                completion(heights)
+//            }
+//        }
         
-        db.collection("heights").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-                completion(nil)
-            } else {
-                let heights = querySnapshot?.documents.compactMap({ Height(JSON: $0.data()) })
-                completion(heights)
+        if let path = Bundle.main.path(forResource: "heights", ofType: "json") {
+         
+            let url = URL(fileURLWithPath: path)
+            
+            if let data = try? Data(contentsOf: url, options: .mappedIfSafe) {
+                if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    if let dict = json?["heights"] as? [String: Any] {
+                        let heights = dict.keys.compactMap({ dict[$0] as? [String: Any] }).compactMap({ Height(JSON: $0) })
+                        completion(heights)
+                        return
+                        
+                    }
+                }
             }
         }
+        
+        completion(nil)
     }
     
     func appendDescription(celeb: Celebrity, completion: @escaping (Celebrity?, Error?)->()) {
