@@ -27,6 +27,7 @@
 		CE56BFD92178934D00086A0E /* UIAlertView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56BFD82178934D00086A0E /* UIAlertView+Helpers.swift */; };
 		CE56BFDC2178984500086A0E /* AddCelebrityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56BFDA2178984500086A0E /* AddCelebrityController.swift */; };
 		CE56BFE12178D70A00086A0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE56BFE02178D70A00086A0E /* GoogleService-Info.plist */; };
+		CE5F9EED21831598007FF83D /* celebrities.json in Resources */ = {isa = PBXBuildFile; fileRef = CE5F9EEC21831598007FF83D /* celebrities.json */; };
 		CEC00BFF2179DC3A008EDFC8 /* String+Helpres.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */; };
 		CEDFFC0F217E096900D6CF99 /* FirbaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC0E217E096900D6CF99 /* FirbaseManager.swift */; };
 		CEDFFC11217E0DD800D6CF99 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFFC10217E0DD800D6CF99 /* ErrorManager.swift */; };
@@ -61,6 +62,7 @@
 		CE56BFD82178934D00086A0E /* UIAlertView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Helpers.swift"; sourceTree = "<group>"; };
 		CE56BFDA2178984500086A0E /* AddCelebrityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCelebrityController.swift; sourceTree = "<group>"; };
 		CE56BFE02178D70A00086A0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE5F9EEC21831598007FF83D /* celebrities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = celebrities.json; sourceTree = "<group>"; };
 		CEC00BFE2179DC3A008EDFC8 /* String+Helpres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpres.swift"; sourceTree = "<group>"; };
 		CEDFFC0E217E096900D6CF99 /* FirbaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirbaseManager.swift; sourceTree = "<group>"; };
 		CEDFFC10217E0DD800D6CF99 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		CE23F6CF2181ECEA00C4DA42 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CE5F9EEC21831598007FF83D /* celebrities.json */,
 				CE23F6D02181ECF800C4DA42 /* heights.json */,
 			);
 			path = Data;
@@ -317,6 +320,7 @@
 				CE23F6D12181ECF800C4DA42 /* heights.json in Resources */,
 				CE2B38FF2170D1040012843A /* LaunchScreen.storyboard in Resources */,
 				CE444DE4217622C80001EE43 /* CelebrityController.storyboard in Resources */,
+				CE5F9EED21831598007FF83D /* celebrities.json in Resources */,
 				CE444DDD2175F1120001EE43 /* MenuController.storyboard in Resources */,
 				CE2B38FC2170D1040012843A /* Assets.xcassets in Resources */,
 				CE2B38FA2170D1030012843A /* FeedController.storyboard in Resources */,
